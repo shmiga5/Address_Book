@@ -1,0 +1,88 @@
+﻿<Window x:Class="WpfApp6111.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6111"
+        mc:Ignorable="d"
+        Title="Address Book" Height="700" Width="750">
+    <Grid>
+        <StackPanel Margin="10,10,10,10">
+            <DataGrid x:Name="contactDataGrid" AutoGenerateColumns="True" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Шаблон пошуку:" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+                <TextBox x:Name="searchTextBox" Width="200" VerticalAlignment="Bottom"/>
+                <Button Content="Здійснити пошук за іменем (Ctrl+N)" Width="216" VerticalAlignment="Bottom" Margin="10,0,0,0" Click="SearchButton_Click">
+                    <Button.InputBindings>
+                        <KeyBinding Key="N" Modifiers="Control"/>
+                    </Button.InputBindings>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Ім'я:" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+                <TextBox x:Name="nameTextBox" Width="200" VerticalAlignment="Bottom"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Адреса:" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+                <TextBox x:Name="addressTextBox" Width="200" VerticalAlignment="Bottom"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Номер телефону:" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+                <TextBox x:Name="phoneTextBox" Width="200" VerticalAlignment="Bottom"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Місце праці/навчання:" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+                <TextBox x:Name="workplaceTextBox" Width="200" VerticalAlignment="Bottom"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Посада:" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+                <TextBox x:Name="positionTextBox" Width="200" VerticalAlignment="Bottom"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Тип відносин:" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+                <TextBox x:Name="relationshipTextBox" Width="200" VerticalAlignment="Bottom"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Місце знайомства:" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+                <TextBox x:Name="introductionTextBox" Width="200" VerticalAlignment="Bottom"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Ділові якості:" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+                <TextBox x:Name="businessQualitiesTextBox" Width="200" VerticalAlignment="Bottom"/>
+            </StackPanel>
+
+            <Button Content="Додати контакт (Ctrl+M)" Width="157" Margin="0,10,0,0" Click="AddContactButton_Click" Height="34">
+                <Button.InputBindings>
+                    <KeyBinding Key="M" Modifiers="Control"/>
+                </Button.InputBindings>
+            </Button>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Видалити за іменем:" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+                <TextBox x:Name="deleteNameTextBox" Width="200" VerticalAlignment="Bottom" Height="28"/>
+                <Button Content="Видалити за іменем" Width="184" Margin="10,20,0,0" Click="DeleteContactButton_Click" Height="30">
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Впорядкування імен в алфавітному порядку (Ctrl+B)" Width="342" VerticalAlignment="Bottom" Margin="0,10,10,0" Click="SortByNameButton_Click" Height="33">
+                    <Button.InputBindings>
+                        <KeyBinding Key="B" Modifiers="Control"/>
+                    </Button.InputBindings>
+                </Button>
+                <Button Content="Впорядкувати за датою останнього коригування (Ctrl+O)" Width="377" VerticalAlignment="Bottom" Margin="0,10,0,0" Click="SortByLastModifiedButton_Click" Height="33">
+                    <Button.InputBindings>
+                        <KeyBinding Key="O" Modifiers="Control"/>
+                    </Button.InputBindings>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
+
